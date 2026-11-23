@@ -79,6 +79,15 @@ const t = useTranslations(locale);
         bundlePath,
         showImages: false,
         showSubResults: true,
+        processResult: function (result: { url: string }) {
+          // Pagefind indexes paths relative to the site root, while this site
+          // is served from a sub-path (`base`), so prefix every result URL.
+          const base = import.meta.env.BASE_URL.replace(/\/?$/, "/");
+          if (result.url && !result.url.startsWith(base)) {
+            result.url = base + result.url.replace(/^\//, "");
+          }
+          return result;
+        },
         processTerm: function (term: string) {
           params.set("q", term); // Update the `q` parameter in the URL
           history.replaceState(history.state, "", "?" + params.toString()); // Push the new URL without reloading

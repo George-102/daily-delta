@@ -7,7 +7,6 @@ export default defineAstroPaperConfig({
     description: "A daily increment of code, books, and ideas.",
     author: "Christopher Chang",
     profile: "https://george-102.github.io/daily-delta/about/",
-    ogImage: "default-og.jpg",
     lang: "en",
     timezone: "Asia/Shanghai",
     dir: "ltr",

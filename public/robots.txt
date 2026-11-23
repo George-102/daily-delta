@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-
-# 根据你的 base 路径，sitemap 实际地址为：
-Sitemap: https://george-102.github.io/daily-delta/sitemap-index.xml
