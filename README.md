@@ -1,166 +1,155 @@
-# AstroPaper 📄
+# Daily Delta
 
-![AstroPaper](public/default-og.jpg)
-[![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)](https://www.figma.com/community/file/1356898632249991861)
-![Typescript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
-![GitHub](https://img.shields.io/github/license/satnaing/astro-paper?color=%232F3741&style=for-the-badge)
-[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white&style=for-the-badge)](https://conventionalcommits.org)
-[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=for-the-badge)](http://commitizen.github.io/cz-cli/)
+**A daily increment of code, books, and ideas.**
 
-AstroPaper is a minimal, responsive, accessible and SEO-friendly Astro blog theme. This theme is designed and crafted based on [my personal blog](https://satnaing.dev/blog).
+Live site: **https://george-102.github.io/daily-delta/**
 
-Read [the blog posts](https://astro-paper.pages.dev/posts/) or check [the README Documentation Section](#-documentation) for more info.
+---
 
-## 🔥 Features
+## What this is
 
-- [x] type-safe markdown
-- [x] super fast performance
-- [x] accessible (Keyboard/VoiceOver)
-- [x] responsive (mobile ~ desktops)
-- [x] SEO-friendly
-- [x] light & dark mode
-- [x] static search ([Pagefind](https://pagefind.app/))
-- [x] draft posts & pagination
-- [x] sitemap & rss feed
-- [x] MDX support
-- [x] table of contents beside posts
-- [x] followed best practices
-- [x] highly customizable
-- [x] dynamic OG image generation for blog posts ([Blog Post](https://astro-paper.pages.dev/posts/dynamic-og-image-generation-in-astropaper-blog-posts/))
-- [x] i18n ready
+I'm Christopher Chang — a computer science student, a programmer, and a writer. I'm also drawn to philosophy, economics, and building things as an entrepreneur. Those interests look scattered, but they share one thread: I want to understand how systems work, whether the system is a compiler, a market, or an argument.
 
-_Note: I've tested screen-reader accessibility of AstroPaper using **VoiceOver** on Mac and **TalkBack** on Android. I couldn't test all other screen-readers out there. However, accessibility enhancements in AstroPaper should be working fine on others as well._
+Daily Delta is where I record what I learn each day. The name comes from a simple habit: a small, deliberate increment every day compounds into something large. Most entries are about technology and books, because those are the two places where I learn fastest. Some posts wander into philosophy or economics when a reading pushes me there.
 
-## ✅ Lighthouse Score
+I write in public for three reasons: writing forces me to make my understanding explicit, publishing keeps me honest about the gaps, and the archive lets me look back and measure how far the increments have added up. Writing in English is part of the exercise too.
 
-<p align="center">
-  <a href="https://pagespeed.web.dev/report?url=https%3A%2F%2Fastro-paper.pages.dev%2F&form_factor=desktop">
-    <img width="710" alt="AstroPaper Lighthouse Score" src="AstroPaper-lighthouse-score.svg">
-  </a>
-</p>
+## What you'll find here
 
-## 🚀 Project Structure
+- Notes on programming, computer science, and the tools I use
+- Summaries and reflections on the books I'm reading
+- Occasional essays on ideas from philosophy and economics
+- Short entries for the days that produce only one useful thought
 
-Inside of AstroPaper, you'll see the following folders and files:
+## Tech stack
+
+| Layer          | Choice                                                                   |
+| :------------- | :----------------------------------------------------------------------- |
+| Framework      | [Astro](https://astro.build/) (static site, zero client JS by default)   |
+| Language       | TypeScript                                                               |
+| Styling        | [Tailwind CSS](https://tailwindcss.com/) v4                              |
+| Search         | [Pagefind](https://pagefind.app/) (static index built at build time)     |
+| Content        | Markdown + MDX, with Shiki syntax highlighting and filename labels       |
+| Sharing images | Dynamic OG images via [Satori](https://github.com/vercel/satori) + Sharp |
+| Feeds & SEO    | RSS, sitemap, `robots.txt`, canonical URLs, per-post metadata            |
+| Deployment     | GitHub Actions → GitHub Pages                                            |
+
+The theme is [AstroPaper](https://github.com/satnaing/astro-paper) by Sat Naing, customized for this site.
+
+## Project structure
 
 ```bash
 /
 ├── public/
-│   ├── pagefind/          # auto-generated on build
-│   ├── favicon.svg
-│   └── default-og.jpg
+│   ├── favicon.png                     # site icon
+│   ├── google5805ff1a5c362673.html     # Search Console verification
+│   └── pagefind/                       # generated at build time, git-ignored
 ├── src/
-│   ├── assets/
-│   │   ├── icons/
-│   │   └── images/
-│   ├── components/
+│   ├── assets/icons/                   # UI and social icons (SVG)
+│   ├── components/                     # Header, Footer, Card, Pagination, ...
 │   ├── content/
-│   │   ├── pages/
-│   │   │   └── about.md
-│   │   └── posts/
-│   │       └── some-blog-posts.md
-│   ├── i18n/
-│   ├── layouts/
-│   ├── pages/
-│   ├── scripts/
-│   ├── styles/
-│   ├── types/
-│   ├── utils/
-│   ├── config.ts
-│   └── content.config.ts
-├── astro-paper.config.ts  # user-defined configurations
-└── astro.config.ts
+│   │   ├── pages/about.md              # the About page
+│   │   └── posts/                      # every blog post lives here
+│   ├── custom/                         # Head / BodyEnd / PostEnd injection points
+│   ├── i18n/                           # locale strings (en)
+│   ├── layouts/                        # Layout.astro, PostLayout.astro
+│   ├── pages/                          # routes: index, posts, tags, archives, rss, og
+│   ├── styles/                         # global / theme / typography CSS
+│   ├── utils/                          # post sorting, slugs, TOC, filters
+│   ├── config.ts                       # runtime config derived from user config
+│   └── content.config.ts               # content collections + frontmatter schema
+├── astro-paper.config.ts               # site identity, socials, feature flags
+├── astro.config.ts                     # base path, integrations, i18n
+├── copy-pagefind.mjs                   # copies the search index for local dev
+└── docs/deployment-plan.md             # deployment notes and daily writing loop
 ```
 
-All blog posts are stored in the `src/content/posts/` directory. You can organise posts into subdirectories — the subdirectory name becomes part of the post URL.
+## Running locally
 
-## 📖 Documentation
-
-Documentation can be read in two formats\_ _markdown_ & _blog post_.
-
-- Configuration - [markdown](src/content/posts/how-to-configure-astropaper-theme.md) | [blog post](https://astro-paper.pages.dev/posts/how-to-configure-astropaper-theme/)
-- Add Posts - [markdown](src/content/posts/adding-new-post.md) | [blog post](https://astro-paper.pages.dev/posts/adding-new-posts-in-astropaper-theme/)
-- Customize Color Schemes - [markdown](src/content/posts/customizing-astropaper-theme-color-schemes.md) | [blog post](https://astro-paper.pages.dev/posts/customizing-astropaper-theme-color-schemes/)
-- Predefined Color Schemes - [markdown](src/content/posts/predefined-color-schemes.md) | [blog post](https://astro-paper.pages.dev/posts/predefined-color-schemes/)
-
-## 💻 Tech Stack
-
-**Main Framework** - [Astro](https://astro.build/)  
-**Type Checking** - [TypeScript](https://www.typescriptlang.org/)  
-**Styling** - [TailwindCSS](https://tailwindcss.com/)  
-**UI/UX** - [Figma Design File](https://www.figma.com/community/file/1356898632249991861)  
-**Static Search** - [Pagefind](https://pagefind.app/)  
-**Icons** - [Tablers](https://tabler-icons.io/)  
-**Code Formatting** - [Prettier](https://prettier.io/)  
-**Deployment** - [Cloudflare Pages](https://pages.cloudflare.com/)  
-**Linting** - [ESLint](https://eslint.org)  
-**Dynamic OG images** - [Satori](https://github.com/vercel/satori) + [Sharp](https://sharp.pixelplumbing.com/) + [Astro Fonts](https://docs.astro.build/en/guides/fonts/)
-
-## 👨🏻‍💻 Running Locally
-
-You can start using this project locally by running the following command in your desired directory:
+Requires **Node ≥ 22.23.4** and **pnpm**.
 
 ```bash
-# pnpm
-pnpm create astro@latest --template satnaing/astro-paper
-
-# pnpm
-pnpm create astro@latest -- --template satnaing/astro-paper
-
-# yarn
-yarn create astro --template satnaing/astro-paper
-
-# bun
-bun create astro@latest -- --template satnaing/astro-paper
-```
-
-Then start the project by running the following commands:
-
-```bash
-# install dependencies if you haven't done so in the previous step.
 pnpm install
-
-# start running the project
 pnpm dev
 ```
 
-## Google Site Verification (optional)
+Then open **http://localhost:4321/daily-delta/** — the `/daily-delta` segment is required, because `base` is set to the repository name.
 
-You can add your [Google Site Verification HTML tag](https://support.google.com/webmasters/answer/9008080#meta_tag_verification&zippy=%2Chtml-tag) by setting `site.googleVerification` in `astro-paper.config.ts`:
+| Command             | Action                                                                  |
+| :------------------ | :---------------------------------------------------------------------- |
+| `pnpm install`      | Install dependencies                                                    |
+| `pnpm dev`          | Start the dev server at `localhost:4321/daily-delta/`                   |
+| `pnpm build`        | Type-check, build, run Pagefind indexing, copy the index into `public/` |
+| `pnpm preview`      | Preview the production build locally                                    |
+| `pnpm sync`         | Generate TypeScript types for Astro modules                             |
+| `pnpm format`       | Format with Prettier                                                    |
+| `pnpm format:check` | Verify formatting without writing changes                               |
+| `pnpm lint`         | Lint with ESLint                                                        |
 
-```ts file="astro-paper.config.ts"
-export default defineAstroPaperConfig({
-  site: {
-    // ...
-    googleVerification: "your-google-site-verification-value",
-  },
-  // ...
-});
+If `pnpm build` fails with `RangeError: Offset is outside the bounds of the DataView` on Windows, a system proxy is intercepting the local server that Astro starts while generating OG images. Clear the proxy variables for that shell, or bypass `localhost` in the proxy settings.
+
+## Writing a post
+
+Posts are plain Markdown or MDX files in `src/content/posts/`. **The filename becomes the URL**, and subdirectories are folded into the path:
+
+```
+src/content/posts/my-first-note.md    →  /daily-delta/posts/my-first-note/
+src/content/posts/notes/day-12.md     →  /daily-delta/posts/notes/day-12/
 ```
 
-> See [this discussion](https://github.com/satnaing/astro-paper/discussions/334#discussioncomment-10139247) for adding AstroPaper to the Google Search Console.
+Keep filenames lowercase ASCII with hyphens: the slug is taken from the filename verbatim, with no transliteration, so non-ASCII names turn into percent-encoded URLs.
 
-## 🧞 Commands
+Required frontmatter:
 
-All commands are run from the root of the project, from a terminal:
-
-| Command          | Action                                                                                                                           |
-| :--------------- | :------------------------------------------------------------------------------------------------------------------------------- |
-| `pnpm install`   | Installs dependencies                                                                                                            |
-| `pnpm dev`       | Starts local dev server at `localhost:4321`                                                                                      |
-| `pnpm build`     | Type-checks, builds the site, runs Pagefind indexing, and copies the index to `public/pagefind/`                                 |
-| `pnpm preview`   | Preview your build locally, before deploying                                                                                     |
-| `pnpm sync`      | Generates TypeScript types for all Astro modules. [Learn more](https://docs.astro.build/en/reference/cli-reference/#astro-sync). |
-| `pnpm astro ...` | Run CLI commands like `astro add`, `astro check`                                                                                 |
-
-## ✨ Feedback & Suggestions
-
-If you have any suggestions/feedback, you can contact me via [my email](mailto:satnaingdev+astropaper@gmail.com). Alternatively, feel free to open an issue if you find bugs or want to request new features.
-
-## 📜 License
-
-Licensed under the MIT License, Copyright © 2026
-
+```yaml
 ---
+title: "Post title"
+description: "One-line summary, used on cards and in SEO metadata"
+pubDatetime: 2026-11-23T20:00:00+08:00
+tags: ["code", "reading"]
+---
+```
 
-Made with 🤍 by [Sat Naing](https://satnaing.dev) 👨🏻‍💻 and [contributors](https://github.com/satnaing/astro-paper/graphs/contributors).
+Optional fields:
+
+| Field                  | Effect                                                        |
+| :--------------------- | :------------------------------------------------------------ |
+| `featured: true`       | Pins the post to the featured section on the home page        |
+| `draft: true`          | Never published — hidden even in `pnpm dev`                   |
+| `modDatetime`          | Shows an "updated on" date; does not change sort order        |
+| `ogImage: ./cover.png` | Custom share image; otherwise the generated `/og.png` is used |
+| `hideToc: true`        | Hides the table of contents                                   |
+| `hideEditPost: true`   | Hides the "edit this page" link                               |
+| `canonicalURL`         | Original source URL, for republished writing                  |
+| `timezone`             | Overrides the site default (`Asia/Shanghai`) for this post    |
+
+Two behaviors worth knowing:
+
+- **Drafts**: `draft: true` is invisible everywhere. To preview a draft locally, prefix the filename with `_` (e.g. `_draft-note.md`) — the content loader ignores anything starting with `_`.
+- **Scheduled posts**: a future `pubDatetime` is visible in `pnpm dev` but hidden in the production build until that calendar day (evaluated in `Asia/Shanghai`). This is how posts get queued in advance.
+
+## Deployment
+
+Pushing to `main` triggers `.github/workflows/deploy.yml`, which installs dependencies, runs `pnpm build`, and deploys `dist/` to GitHub Pages. No manual build step is needed for normal writing.
+
+Keep these three values in sync, or the site will build fine but break on the live URL:
+
+| Setting         | File                    | Current value                               |
+| :-------------- | :---------------------- | :------------------------------------------ |
+| Repository name | GitHub                  | `daily-delta`                               |
+| `base`          | `astro.config.ts`       | `/daily-delta`                              |
+| `site.url`      | `astro-paper.config.ts` | `https://george-102.github.io/daily-delta/` |
+
+Site identity — title, description, author, timezone, socials, per-page counts, feature flags — lives entirely in `astro-paper.config.ts`.
+
+## Contact
+
+- Email: [su2489544776@outlook.com](mailto:su2489544776@outlook.com)
+- GitHub: [George-102](https://github.com/George-102)
+- About page: [george-102.github.io/daily-delta/about](https://george-102.github.io/daily-delta/about/)
+
+## Credits & license
+
+Built on the [AstroPaper](https://github.com/satnaing/astro-paper) theme by [Sat Naing](https://satnaing.dev), released under the MIT License. See [LICENSE](LICENSE) for the original copyright notice.
+
+All writing on this site is my own.
