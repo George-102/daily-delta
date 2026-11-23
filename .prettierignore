@@ -7,10 +7,14 @@
 !/.github
 !tsconfig.json
 !astro.config.ts
+!astro-paper.config.ts
 !package.json
 !.prettierrc
 !eslint.config.js
+!cz.yaml
 !README.md
+!LICENSE
+!docs
 !.vscode
 
 # Ignore MDX files

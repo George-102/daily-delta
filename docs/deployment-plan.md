@@ -9,15 +9,15 @@
 
 ## 进度总览
 
-| 阶段 | 内容 | 状态 |
-| --- | --- | --- |
-| A | 本地环境（一次性） | ✅ 已完成 |
-| B | 本地跑通验证 | ✅ 已完成（初次的 `pnpm build` 失败已随 D 阶段修复） |
-| C | 站点身份配置 | ✅ 已完成（about.md 已写好，配置文件 8–13 项已核对） |
-| D | 清理模板痕迹 | ✅ 已完成（15–24 全部处理，含 2 个替代方案） |
-| E | 提交前检查 | ✅ 已完成（format / lint / build 全绿，4 个原子提交） |
-| F | GitHub 网页侧设置 | ✅ 已完成（Pages Source 早已是 Actions，线上已验证） |
-| G | 日常写作循环 | ✅ 已沉淀为固定流程（见下方速查表） |
+| 阶段 | 内容               | 状态                                                  |
+| ---- | ------------------ | ----------------------------------------------------- |
+| A    | 本地环境（一次性） | ✅ 已完成                                             |
+| B    | 本地跑通验证       | ✅ 已完成（初次的 `pnpm build` 失败已随 D 阶段修复）  |
+| C    | 站点身份配置       | ✅ 已完成（about.md 已写好，配置文件 8–13 项已核对）  |
+| D    | 清理模板痕迹       | ✅ 已完成（15–24 全部处理，含 2 个替代方案）          |
+| E    | 提交前检查         | ✅ 已完成（format / lint / build 全绿，4 个原子提交） |
+| F    | GitHub 网页侧设置  | ✅ 已完成（Pages Source 早已是 Actions，线上已验证）  |
+| G    | 日常写作循环       | ✅ 已沉淀为固定流程（见下方速查表）                   |
 
 > 站点已上线：https://george-102.github.io/daily-delta/
 > 首次完整部署记录：`d335a11..210f6d9`，Actions run `45179969116`（build + deploy 两个 job 全绿）
@@ -49,15 +49,15 @@
 
 ### C 检查结论
 
-| 项 | 位置 | 当前值 | 结论 |
-| --- | --- | --- | --- |
-| 8 | `site.url` | `https://george-102.github.io/daily-delta/` | ✅ 与仓库 `George-102/daily-delta` 的 Pages 地址一致 |
-| 9 | `base` | `/daily-delta` | ✅ 与仓库名一致 |
-| 10 | `site.title` / `site.description` | `Daily Delta` / `A daily increment of code, books, and ideas.` | ✅ 已改，无模板残留 |
-| 11 | `site.author` / `timezone` / `lang` / `dir` / `profile` | `Christopher Chang` / `Asia/Shanghai` / `en` / `ltr` / about 页 | ✅ 全部正确 |
-| 12 | `socials` | github + mail | ✅ 图标文件存在，可访问性标题自动生成 |
-| 13 | `editPost` | `enabled: true`，`.../George-102/daily-delta/edit/main/` | ✅ 地址格式正确 |
-| 14 | `about.md` | 已重写 | ✅ frontmatter `title` / `description` 齐全 |
+| 项  | 位置                                                    | 当前值                                                          | 结论                                                 |
+| --- | ------------------------------------------------------- | --------------------------------------------------------------- | ---------------------------------------------------- |
+| 8   | `site.url`                                              | `https://george-102.github.io/daily-delta/`                     | ✅ 与仓库 `George-102/daily-delta` 的 Pages 地址一致 |
+| 9   | `base`                                                  | `/daily-delta`                                                  | ✅ 与仓库名一致                                      |
+| 10  | `site.title` / `site.description`                       | `Daily Delta` / `A daily increment of code, books, and ideas.`  | ✅ 已改，无模板残留                                  |
+| 11  | `site.author` / `timezone` / `lang` / `dir` / `profile` | `Christopher Chang` / `Asia/Shanghai` / `en` / `ltr` / about 页 | ✅ 全部正确                                          |
+| 12  | `socials`                                               | github + mail                                                   | ✅ 图标文件存在，可访问性标题自动生成                |
+| 13  | `editPost`                                              | `enabled: true`，`.../George-102/daily-delta/edit/main/`        | ✅ 地址格式正确                                      |
+| 14  | `about.md`                                              | 已重写                                                          | ✅ frontmatter `title` / `description` 齐全          |
 
 ### C 检查发现的问题（不属于 C 的修复范围，但会影响上线）
 
@@ -101,16 +101,16 @@
 
 ### E 阶段提交记录
 
-| commit | 类型 | 内容 |
-| --- | --- | --- |
+| commit    | 类型          | 内容                                                                                 |
+| --------- | ------------- | ------------------------------------------------------------------------------------ |
 | `3eacf56` | `chore(repo)` | 新增 `.gitattributes`，重写 `.gitignore`，`.prettierignore` 排除 Search Console 文件 |
-| `867f207` | `chore` | 删除模板示例文章 / 模板图片 / 冗余静态文件，首页 hero 改写，Pagefind 结果补 `base` |
-| `557efcf` | `feat(post)` | 新增第一篇测试文章 `hello-daily-delta.md` |
-| `210f6d9` | `docs` | 新增本部署计划文档 |
+| `867f207` | `chore`       | 删除模板示例文章 / 模板图片 / 冗余静态文件，首页 hero 改写，Pagefind 结果补 `base`   |
+| `557efcf` | `feat(post)`  | 新增第一篇测试文章 `hello-daily-delta.md`                                            |
+| `210f6d9` | `docs`        | 新增本部署计划文档                                                                   |
 
 ### E 阶段关于 `.gitignore` / `.gitattributes` 的说明
 
-`.gitignore` 按类别分组重写，覆盖：构建产物（`dist/`、`.astro/`）、搜索索引（`public/pagefind/`）、依赖（`node_modules/`、`.pnpm-store/`）、缓存（`.eslintcache`、`*.tsbuildinfo`）、日志（`*.log`）、环境变量（`.env*`，但保留 `!.env.example`）、IDE（`.idea/`）、操作系统（`.DS_Store`、`Thumbs.db`、`Desktop.ini`）、覆盖率（`coverage/`）、Docker（`compose.override.yaml`）。`.vscode/` **故意不忽略**——模板自带的 `extensions.json`、`launch.json` 和代码片段对团队协作有用。
+`.gitignore` 按类别分组重写，覆盖：构建产物（`dist/`、`.astro/`）、搜索索引（`public/pagefind/`）、依赖（`node_modules/`、`.pnpm-store/`）、缓存（`.eslintcache`、`*.tsbuildinfo`）、日志（`*.log`）、环境变量（`.env*`，但保留 `!.env.example`）、IDE（`.idea/`）、操作系统（`.DS_Store`、`Thumbs.db`、`Desktop.ini`）、覆盖率（`coverage/`）。`.vscode/` **故意不忽略**——模板自带的 `extensions.json`、`launch.json` 和代码片段对团队协作有用。
 
 新增 `.gitattributes` 是必须的，不是可选优化。本机 `core.autocrlf=true`，提交时 Git 一直警告 `LF will be replaced by CRLF`。若不声明，全新克隆后工作区所有文件变成 CRLF，而 `.prettierrc` 里 `endOfLine` 是 `"lf"`，`pnpm format:check` 会整片报错，pre-commit 钩子也可能失效。文件内容：
 
@@ -127,19 +127,19 @@
 
 ### F 阶段线上验证结果
 
-| 地址 | 状态 |
-| --- | --- |
-| `/`（首页） | 200 |
-| `/posts/hello-daily-delta/`（测试文章） | 200 |
-| `/tags/`、`/tags/meta/` | 200 |
-| `/archives/` | 200 |
-| `/search/` | 200 |
-| `/about/` | 200 |
-| `/rss.xml`、`/sitemap-index.xml` | 200 |
-| `/og.png`（动态分享图） | 200 |
-| `/favicon.png` | 200 |
-| `/google5805ff1a5c362673.html` | 200，内容原样 |
-| `/pagefind/pagefind.js`（搜索索引） | 200 |
+| 地址                                    | 状态          |
+| --------------------------------------- | ------------- |
+| `/`（首页）                             | 200           |
+| `/posts/hello-daily-delta/`（测试文章） | 200           |
+| `/tags/`、`/tags/meta/`                 | 200           |
+| `/archives/`                            | 200           |
+| `/search/`                              | 200           |
+| `/about/`                               | 200           |
+| `/rss.xml`、`/sitemap-index.xml`        | 200           |
+| `/og.png`（动态分享图）                 | 200           |
+| `/favicon.png`                          | 200           |
+| `/google5805ff1a5c362673.html`          | 200，内容原样 |
+| `/pagefind/pagefind.js`（搜索索引）     | 200           |
 
 ## G. 日常写作循环（以后每次都这样）
 
@@ -171,15 +171,15 @@ tags: ["code", "reading"]
 
 可选字段（定义见 `src/content.config.ts`）：
 
-| 字段 | 作用 |
-| --- | --- |
-| `featured: true` | 进首页 Featured 区，排在普通文章前面 |
-| `draft: true` | **永不发布**，连 `pnpm dev` 都不显示 |
-| `modDatetime` | 显示「更新于」，不影响排序 |
-| `ogImage: ./cover.png` | 自定义分享图，不写则走动态生成的 `/og.png` |
-| `hideToc: true` / `hideEditPost: true` | 关掉目录 / 关掉「编辑此页」按钮 |
-| `canonicalURL` | 原文链接（转载场景） |
-| `timezone` | 单篇覆盖站点默认的 `Asia/Shanghai` |
+| 字段                                   | 作用                                       |
+| -------------------------------------- | ------------------------------------------ |
+| `featured: true`                       | 进首页 Featured 区，排在普通文章前面       |
+| `draft: true`                          | **永不发布**，连 `pnpm dev` 都不显示       |
+| `modDatetime`                          | 显示「更新于」，不影响排序                 |
+| `ogImage: ./cover.png`                 | 自定义分享图，不写则走动态生成的 `/og.png` |
+| `hideToc: true` / `hideEditPost: true` | 关掉目录 / 关掉「编辑此页」按钮            |
+| `canonicalURL`                         | 原文链接（转载场景）                       |
+| `timezone`                             | 单篇覆盖站点默认的 `Asia/Shanghai`         |
 
 ### 3. 本地预览
 
@@ -223,16 +223,16 @@ pnpm build
 
 ### 7. 高频日常小事
 
-| 我想… | 做法 |
-| --- | --- |
-| 发一篇新文章 | 建 `xxx.md` → 写 frontmatter → `pnpm dev` 看 → push |
-| 存草稿 | 文件名加 `_` 前缀 |
-| 定时发布 | `pubDatetime` 写未来日期 |
-| 加文章配图 | 图片放文章同目录，正文 `![说明](./cover.png)`，`ogImage: ./cover.png` 也支持本地路径 |
-| 加标签 | `tags` 数组里写即可，标签页自动生成；大小写/空格会被 slugify（`Meta` 与 `meta` 归到同一标签页） |
-| 改站点信息 | 只改 `astro-paper.config.ts`（标题、简介、社交链接、每页篇数、搜索/目录开关） |
+| 我想…            | 做法                                                                                                  |
+| ---------------- | ----------------------------------------------------------------------------------------------------- |
+| 发一篇新文章     | 建 `xxx.md` → 写 frontmatter → `pnpm dev` 看 → push                                                   |
+| 存草稿           | 文件名加 `_` 前缀                                                                                     |
+| 定时发布         | `pubDatetime` 写未来日期                                                                              |
+| 加文章配图       | 图片放文章同目录，正文 `![说明](./cover.png)`，`ogImage: ./cover.png` 也支持本地路径                  |
+| 加标签           | `tags` 数组里写即可，标签页自动生成；大小写/空格会被 slugify（`Meta` 与 `meta` 归到同一标签页）       |
+| 改站点信息       | 只改 `astro-paper.config.ts`（标题、简介、社交链接、每页篇数、搜索/目录开关）                         |
 | 手机上临时补一句 | 文章页有「编辑此页」按钮，指向 `.../edit/main/src/content/posts/xxx.md`，网页改完 commit 也会触发部署 |
-| 本地验证全流程 | 清代理 + `pnpm build` |
+| 本地验证全流程   | 清代理 + `pnpm build`                                                                                 |
 
 ---
 
