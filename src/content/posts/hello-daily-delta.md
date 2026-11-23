@@ -1,54 +1,46 @@
 ---
 title: "Hello, Daily Delta"
-description: "A first test post that walks through the features this blog template gives me: headings, code blocks, callouts, tables, and tags."
+author: Christopher Chang
+description: "Introduction about why I am here and what kind of person I am."
 pubDatetime: 2026-11-23T20:00:00+08:00
+modDatetime: 2026-11-23T22:19:00+08:00
 tags: ["meta", "writing"]
 featured: true
+draft: false
 ---
 
-This is the first post on Daily Delta. I am writing it mostly as a smoke test: if you can read it, then the Markdown pipeline, the styling, the table of contents, and the tag system are all wired up correctly.
-
-The plan is simple. One small increment every day, written down in public, until the increments add up to something worth looking back on.
+This is the first post on Daily Delta. The main reason I come here is that I wanna share good ideas and knowledge with you.
 
 ## Why write in public
 
 Writing forces me to make my understanding explicit. A note I cannot explain clearly is a note I have not really learned yet. Publishing keeps me honest about that gap.
 
-## What this post verifies
+I plan to share things I learned everyday, which could be the thoughts on entrepreneurship, excellent skills in computer science, practical advice for life. At the same time, I would like to make friends here and engage in some meaningful projects.
 
-| Feature           | Where it shows up                                | Expected result                     |
-| ----------------- | ------------------------------------------------ | ----------------------------------- |
-| Table of contents | Right side of this page (or the floating button) | Links jump to headings              |
-| Code highlighting | The block below                                  | Light and dark themes both readable |
-| Callouts          | The note box below                               | Rendered with an icon and a border  |
-| Tags              | `meta`, `writing`                                | Both tag pages list this post       |
-| Featured section  | The home page                                    | This post appears first             |
+## What kind of person am I
 
-## A small code sample
+I am a person who loves learning knowledge in various fields. I am passionate about sports, currently learning about fashion, and trying out fitness. I am not accustomed to following the crowd and prefer to act according to my own thoughts and personality. I am good at independent thinking and putting forward my own opinions, which may sometimes be naive and sometimes mature. I hope to become as perfect as possible, even though this is almost impossible. I also have many shortcomings, such as difficulty in persisting for a long time and always thinking too much. The meaning of my life lies in constantly challenging myself and the unknown.
 
-```ts file="daily-delta.ts"
-type Increment = {
-  date: string;
-  minutes: number;
-};
+Below is my life declaration:
 
-const log: Increment[] = [
-  { date: "2026-11-22", minutes: 45 },
-  { date: "2026-11-23", minutes: 30 }, // [!code highlight]
-];
-
-const total = log.reduce((sum, entry) => sum + entry.minutes, 0);
-
-console.log(`Total focus time: ${total} minutes`); // [!code ++]
-```
-
-> [!note]
-> The numbers above are placeholders. The real entries will live in the posts themselves, not in a code block.
-
-## What comes next
-
-- Publish a short note whenever a day produces one useful thought
-- Keep longer essays for the ideas that refuse to stay short
-- Never publish something I would be embarrassed to re-read in a year
-
-If any part of this page looks broken, the problem is the site, not the idea. You can reach me through the [About page](https://george-102.github.io/daily-delta/about/).
+- Value others’ time
+- Accquire a little bit everyday
+- Be willing to dedicate
+- mutual benefit and win-win cooperation with partners
+- Try out unfamiliar skills
+- good routine
+- sense of humor
+- Use electronic products less
+- Plan tomorrow's work everyday
+- Devotion leads to excellence
+- Keep reading
+- Learn the method of balancing life
+- Balance life and career
+- Respect others, for there are always people better than you
+- Listen to others and don't be dogmatic
+- lifelong learning
+- Never follow the crowd easily
+- Enhance personal charm
+- Strive to become an all-round scholar
+- Challenge the unknown
+- I say, examine oneself thrice daily

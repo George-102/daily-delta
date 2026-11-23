@@ -18,7 +18,7 @@ Daily Delta is where I record what I learn each day. The name comes from a simpl
 
 ## Why I write in public
 
-Writing forces me to make my understanding explicit. A note I cannot explain clearly is a note I have not really learned. Publishing keeps me honest about that gap, and it leaves a trail I can look back on and measure.Lastly,for learning English.
+Writing forces me to make my understanding explicit. A note I cannot explain clearly is a note I have not really learned. Publishing keeps me honest about that gap, and it leaves a trail I can look back on and measure.Also,for learning English.
 
 ## Get in touch
 
