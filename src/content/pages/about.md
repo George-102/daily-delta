@@ -3,6 +3,7 @@ title: "About"
 description: "A bit about me and this blog."
 ---
 
+![Profile picture](./banner.jpg)
 Hi, I'm Christopher Chang.
 
 I'm a computer science student, a programmer, and a writer. I'm also drawn to philosophy, economics, and building things as an entrepreneur. These interests look scattered at first glance, but they share one thread: I want to understand how systems work, whether the system is a compiler, a market, or an argument.
@@ -18,7 +19,7 @@ Daily Delta is where I record what I learn each day. The name comes from a simpl
 
 ## Why I write in public
 
-Writing forces me to make my understanding explicit. A note I cannot explain clearly is a note I have not really learned. Publishing keeps me honest about that gap, and it leaves a trail I can look back on and measure.Also,for learning English.
+Writing forces me to make my understanding explicit. A note I cannot explain clearly is a note I have not really learned. Publishing keeps me honest about that gap, and it leaves a trail I can look back on and measure. Also, for learning English.
 
 ## Get in touch
 
