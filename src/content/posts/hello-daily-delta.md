@@ -15,7 +15,7 @@ This is the first post on Daily Delta. The main reason I come here is that I wan
 
 Writing forces me to make my understanding explicit. A note I cannot explain clearly is a note I have not really learned yet. Publishing keeps me honest about that gap.
 
-I plan to share things I learned everyday, which could be the thoughts on entrepreneurship, excellent skills in computer science, practical advice for life. At the same time, I would like to make friends here and engage in some meaningful projects.
+I plan to share things I learned every day, which could be the thoughts on entrepreneurship, excellent skills in computer science, practical advice for life. At the same time, I would like to make friends here and engage in some meaningful projects.
 
 ## What kind of person am I
 
@@ -24,14 +24,14 @@ I am a person who loves learning knowledge in various fields. I am passionate ab
 Below is my life declaration:
 
 - Value others’ time
-- Accquire a little bit everyday
+- Accquire a little bit every day
 - Be willing to dedicate
 - mutual benefit and win-win cooperation with partners
 - Try out unfamiliar skills
 - good routine
 - sense of humor
 - Use electronic products less
-- Plan tomorrow's work everyday
+- Plan tomorrow's work every day
 - Devotion leads to excellence
 - Keep reading
 - Learn the method of balancing life
