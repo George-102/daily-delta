@@ -24,6 +24,7 @@ import config from "./astro-paper.config";
 
 export default defineConfig({
   site: config.site.url,
+  base: "/daily-delta",
   integrations: [
     mdx(),
     sitemap({
