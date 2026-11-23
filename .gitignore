@@ -1,33 +1,44 @@
-# build output
+# ---------- 构建产物 ----------
 dist/
-
-# generated types
 .astro/
 
-# dependencies
-node_modules/
+# Pagefind 搜索索引：由 `pnpm build` 生成并复制到 public/，不入库
+public/pagefind/
 
-# logs
+# ---------- 依赖 ----------
+node_modules/
+.pnpm-store/
+
+# ---------- 缓存 ----------
+.eslintcache
+*.tsbuildinfo
+node_modules/.cache/
+
+# ---------- 日志 ----------
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-# environment variables
+# ---------- 环境变量 ----------
 .env
+.env.local
+.env.*.local
+.env.development
 .env.production
+!.env.example
 
-# macOS-specific files
-.DS_Store
-
-# jetbrains setting folder
+# ---------- 编辑器 / IDE ----------
 .idea/
 
-# pagefind
-public/pagefind
+# ---------- 操作系统 ----------
+.DS_Store
+Thumbs.db
+Desktop.ini
 
-# pnpm
-.pnpm-store
+# ---------- 测试覆盖率 ----------
+coverage/
 
-# docker compose
+# ---------- Docker ----------
 compose.override.yaml
