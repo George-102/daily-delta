@@ -1,6 +1,6 @@
 ---
 title: "Hello, Daily Delta"
-author: Christopher Chang
+author: "Christopher Chang"
 description: "Introduction about why I am here and what kind of person I am."
 pubDatetime: 2026-11-23T20:00:00+08:00
 modDatetime: 2026-11-23T22:19:00+08:00
